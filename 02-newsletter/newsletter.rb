@@ -4,6 +4,8 @@ require 'date'
 ############################
 # Data for the newsletter
 ############################
+
+# hi shannon
 CAMPUS = {
   "name": "DC",
   "address": "1440 G St NW, Washington, DC 20005",
