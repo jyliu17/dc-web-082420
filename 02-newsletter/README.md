@@ -20,12 +20,12 @@ Make edits to `newsletter.rb`. As you do, you can run the code with `ruby newsle
 
 These should be completed in order - each step builds on the previous steps. See below for a more detailed explanation of each step.
 
-1. Fix the errors in `newsletter.rb` so that it runs without errors
-2. Fix the `format_campus_location` method so that it has the correct output
-3. Write the `calculate_recipients` method to return only the recipients that haven't unsubscribed
-4. Write the `print_recipients` method to print a string with a list of the correct recipients
-5. Write the body of `print_one_article` to print a string with the formatted article
-6. Write the `print_many_articles` method to print all the articles
+<!-- 1. Fix the errors in `newsletter.rb` so that it runs without errors -->
+<!-- 2. Fix the `format_campus_location` method so that it has the correct output -->
+<!-- 3. Write the `calculate_recipients` method to return only the recipients that haven't unsubscribed -->
+<!-- 4. Write the `print_recipients` method to print a string with a list of the correct recipients -->
+<!-- 5. Write the body of `print_one_article` to print a string with the formatted article -->
+<!-- 6. Write the `print_many_articles` method to print all the articles -->
 7. Run your code with `ruby newsletter.rb` and verify that it matches the sample output in `sample_output.txt`
 
 Feel free to use any debugging tools you've learned in order to solve the challenge. Remember, you may need to add additional code to `newsletter.rb` in order to use tools like `binding.pry`.

@@ -1,14 +1,14 @@
 require 'pry'
+require 'date'
 
 #########################
 # Data for the newsletter
 #########################
-require "pry"
 CAMPUS = {
   "name": "DC",
   "address": "1440 G St NW, Washington, DC 20005",
 }
-DATE = "Nov 20, 2019"
+DATE = DateTime.now.strftime("%B %d, %Y")
 
 SUBSCRIBERS = ["rhona@grimes.info", "cedricschmidt@robel.io", "edmond@ko.org", "bryant@cummingsfisher.biz", "alverta@bernhard.name"]
 UNSUBSCRIBED = ["cedricschmidt@robel.io", "alverta@bernhard.name"]
@@ -30,31 +30,44 @@ ARTICLES = [
 def calculate_recipients
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
+  SUBSCRIBERS - UNSUBSCRIBED
 end
 
-def first_n_articles(number_of_articles
-  ARTICLES.first(number_of_articles)
+def first_n_articles(number_of_articles)
+  ARTICLES.first(number_of_articles.to_i)
 end
 
 def print_recipients
   # Write a method that uses the output of calculate_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
+  print calculate_recipients.join(", ")
 end
 
 def print_one_article(article)
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
+  puts article[:title]
+  puts "\n"
+  puts "by: #{article[:author]}"
+  puts "\n"
+  puts article[:text]
+  puts "\n"
 end
 
-def print_many_articles(articles)
+def print_many_articles(passed_articles)
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
+  passed_articles.each do |art|
+    print_one_article(art)
+  end
+  return nil
+
 end
 
 def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
+  "Flatiron #{campus[:name]}"
 end
 
 def format_subject
@@ -80,13 +93,14 @@ def print_newsletter(number)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
 end
 
 def run
   # We want our program to print three articles by default,
   # but we can change that number here
-  print_newsletter("3")
+  # binding.pry
+
+  print_newsletter(3)
 end
 
 # When we run "ruby newsletter.rb" in the command line,
