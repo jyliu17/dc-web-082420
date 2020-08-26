@@ -59,5 +59,8 @@ end
 petey = Cat.new("Petey", 8, ["black", "white"])
 # binding.pry
 ella = Cat.new("Ella", 10, ["black"])
+garfield = Cat.new("Garfield", 2)
 # Cat.is_the_best # "Cats are the best"
+
+# write a class method to get all cats that have a floofiness of 5 or higher
 binding.pry
