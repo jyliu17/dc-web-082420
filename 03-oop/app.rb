@@ -3,76 +3,61 @@ require 'pry'
 
 class Cat
 
+    attr_accessor :name, :floofiness
+    attr_writer :colors # def name=(name); def floofiness(floofiness)
+    attr_reader :species
+
+    @@natural_enemies = ["dogs", "people with allergies", "batman"] # class variable
+    @@all_cats = []
+
     def initialize(name, floofiness, colors=[]) # this code will automatically run when you call Cat.new
         puts "creating a new cat"
         @name = name 
         @floofiness = floofiness
         @colors = colors
-        
-        # introduce
-    end
-
-    # def set_name(name)
-    def name=(new_name) # setter
-        puts "setting the name"
-        @name = new_name
-    end
-
-
-    # def get_name 
-    def name # getter
-        foo = "whatever" # local variable only accessible in this method
-        return @name # instance variable accessible throughout the instance of the class
-    end
-
-    def floofiness=(new_floofiness)
-        @floofiness = new_floofiness
-    end
-    
-    def floofiness 
-        return @floofiness
-    end
-
-    def introduce
-        puts "Meow my name is #{@name}"
-    end
-
-    def colors=(colors_array)
-        @colors = colors_array
-    end
-
-    def colors 
-        return @colors.join(" and ")
+        @@all_cats << self # instance of the cat I am creating
     end
 
     def meow # instance method
         puts "Meow I am a beautiful kitty"
     end
-
-    def species
-        "feline"
+    
+    def colors 
+        return @colors.join(" and ")
     end
+
+    def introduce # petey.introduce
+        # self == petey
+        puts "Meow my name is #{self.name}. \ 
+        I have a floofiness of #{self.floofiness}. \
+        My colors are #{self.colors}." # self is Petey or Ella--whoever we called the method on
+    end
+
+    def get_all_cats
+        @@all_cats
+    end
+
+    # class methods
+
+    def self.is_the_best # Cat.is_the_best
+        # self == Cat
+        puts "Cats are the best"
+    end
+
+    def self.natural_enemies
+        return @@natural_enemies.join(" and ")
+    end
+
+    def self.all 
+        return @@all_cats
+    end
+
+
 end
 
+# binding.pry
 petey = Cat.new("Petey", 8, ["black", "white"])
+# binding.pry
 ella = Cat.new("Ella", 10, ["black"])
-# petey.name=("Petey")
-# petey.name = "Petey" # same as above
-# ella = Cat.new
-# ella.name = "Ella"
-# ella.colors = ["black"]
-
-# petey.floofiness = 8
-puts petey.name
-puts petey.floofiness
-puts petey.colors # "black and white"
-
-puts ella.name
-
-garfield = Cat.new("Garfield", 2)
-
-
-# petey.colors = ["black", "white"]
-# petey.meow
-# petey.introduce
+# Cat.is_the_best # "Cats are the best"
 binding.pry
