@@ -10,28 +10,35 @@ class Puppy
 
     attr_reader :name, :cuteness
 
-    def initialize(name)
+    @@min_cuteness = 1
+    @@max_cuteness = 10
+
+    def initialize(name, cuteness=5)
         @name = name
-        @cuteness = 5
+        @cuteness = cuteness
     end
 
+    def cuteness=(new_cuteness)
+        @cuteness = new_cuteness.clamp(@@min_cuteness, @@max_cuteness)
+        # if @cuteness > 10
+        #     @cuteness = 10
+        # elsif @cuteness < 1
+        #     @cuteness = 1
+        # end
+    end
+    
     def play_in_the_mud
-        @cuteness -= 5
-        if @cuteness > 10
-            @cuteness = 10
-        elsif @cuteness < 1
-            @cuteness = 1
-        end
+        self.cuteness=(self.cuteness - 5)
     end
 
     def take_a_bath
-        @cuteness += 3 
-        if @cuteness > 10
-            @cuteness = 10
-        elsif @cuteness < 1
-            @cuteness = 1
-        end
+        self.cuteness = self.cuteness + 3 
     end    
+
+    # def get_groomed
+    #     @cuteness += 2
+    #     self.limit_cuteness
+    # end
 end
 
 fido = Puppy.new("Fido")
