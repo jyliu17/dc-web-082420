@@ -1,5 +1,5 @@
 require_relative "./school.rb"
-#making changes
+require_relative "./instructor.rb"
 require_relative "./instructor.rb"
 
-#making some changes
+"hello shannon"
