@@ -62,9 +62,20 @@ class Meal
         # @restaurants << new_restaurant
         # # new_restaurant.add_meal(self)
         # new_restaurant.menu << self # (self is the meal that called this method)
+        MealRestaurant.new(self, new_restaurant)
     end
 
     def restaurants
+        rows = MealRestaurant.all.select do |row|
+            row.meal == self
+        end
+        rows.map do |row|
+            row.restaurant
+        end
+    end
+
+    def restaurant_names 
+        self.restaurants.map {|rest| rest.name}
     end
 end
 

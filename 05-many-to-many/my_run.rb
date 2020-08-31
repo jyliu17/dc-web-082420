@@ -27,7 +27,6 @@ milkshake.add_restaurant(mcd)
 puts "Meal knows its restaurants"
 puts milkshake.restaurants == [mcd]
 
-binding.pry
 
 # x = 5
 # x = x + 10 # 15
