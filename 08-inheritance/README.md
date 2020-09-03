@@ -5,9 +5,7 @@
 - SWBAT distinguish between public and private methods
 
 # Vocabulary 
-- child class
-- parent class
-- subclass 
-- superclass
+- child class / subclass
+- parent class / super class
 - Method Resolution Order (MRO)
 - private/public methods

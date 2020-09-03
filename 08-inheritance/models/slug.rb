@@ -1,0 +1,3 @@
+class Slug < Animal
+
+end
