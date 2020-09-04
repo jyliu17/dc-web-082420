@@ -28,3 +28,4 @@
 * `.find_by` (takes a key-value pair(s), e.g., `.find_by(color: 'blue'`))
 * `.find_or_create_by` (like `find_by` but will create the object if it doesn't exist))
 * `.delete`
+* `.where`
