@@ -1,6 +1,19 @@
 require_relative './config/environment'
+require "sinatra/activerecord/rake"
 
 desc "Start our app console"
 task :console do
   Pry.start
 end
+
+desc "Say hello"
+task :say_hi do 
+  puts "What's up Phase 1?"
+end
+
+# desc "set up database pseudocode"
+# task :set_up_db do 
+#   Database.create(tables: "Author, Book", 
+#                   author_columns: "Name, birthplace",
+#                   book_columns: "Title, genre")
+# end

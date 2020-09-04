@@ -1,3 +1,3 @@
-class Author < ActiveRecord::Base
+class Author
     
 end

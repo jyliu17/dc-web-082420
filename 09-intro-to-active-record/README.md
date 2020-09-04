@@ -19,6 +19,7 @@
 * "Seed data" - starter data to begin your app.  Often, but not always, fake data. 
 * "CRUD" - the most common database operations:  Create, Read, Update, Delete
 * "YAML" - Yet Another Markup Language.  A way to structure data that is language agnostic (not just Ruby)
+* "Primary Key (pk)" a unique ID (almost always integer) to identify a row in the table
 
 ## Major ActiveRecord Methods (there are many more)
 * `.all`
