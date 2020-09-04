@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_150642) do
+ActiveRecord::Schema.define(version: 2020_09_04_153043) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
+    t.string "favorite_colour"
+    t.string "penname"
+    t.string "favorite_pet"
   end
 
 end

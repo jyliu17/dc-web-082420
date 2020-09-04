@@ -10,4 +10,4 @@ ActiveRecord::Base.establish_connection(
   database: "db/my_database.db"
 )
 
-ActiveRecord::Base.logger = Logger.new(STDOUT)
+# ActiveRecord::Base.logger = Logger.new(STDOUT)
