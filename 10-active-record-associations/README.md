@@ -36,3 +36,10 @@
 - A doctor belongs to a single hospital
 - One hospital can have many doctors
 
+## Questions
+
+- how to add a column in a migration
+- rake and rake file 
+- relationship between activerecord and rails/ruby
+- dealing with bad data
+- 
