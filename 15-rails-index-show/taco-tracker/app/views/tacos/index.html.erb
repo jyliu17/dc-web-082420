@@ -1,0 +1,10 @@
+<h1>All the Tacos</h1>
+
+
+<ul>
+    <% @tacos.each do |taco| %>
+        <li>
+            <%= link_to taco.display_name, taco_path(taco) %>
+        </li>
+    <% end %>
+</ul>

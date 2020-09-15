@@ -19,4 +19,8 @@ class StaticController < ApplicationController
 
     end
     
+    def greetings
+        @name = params[:name]
+        render :greetings
+    end 
 end
