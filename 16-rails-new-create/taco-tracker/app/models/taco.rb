@@ -11,4 +11,12 @@ class Taco < ApplicationRecord
     def display_veg
         return self.vegetarian ? "yes" : "no"
     end
+
+    def self.vegetarian
+        Taco.where(vegetarian: true)
+    end
+
+    def self.meat
+        Taco.where(vegetarian: false)
+    end
 end
