@@ -1,0 +1,27 @@
+<h1>All the Tacos</h1>
+
+<form action=<%=tacos_path%> method="GET">
+    <div>
+        <input type="radio" name="vegetarian" value="true">
+        <label for="true">Only Vegetarian</label>
+    </div>
+    <div>
+        <input type="radio" name="vegetarian" value="false">
+        <label for="false">Only Meat</label>
+    </div>
+    <div>
+        <input type="radio" name="vegetarian" value="all">
+        <label for="all">All Tacos</label>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+<ul>
+    <% @tacos.each do |taco| %>
+        <li>
+            <%= link_to taco.display_name, taco_path(taco) %> - <%= taco.vegetarian? %>
+        </li>
+    <% end %>
+</ul>
