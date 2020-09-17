@@ -8,12 +8,13 @@ Rails.application.routes.draw do
 
   get "/hello_people", to: "application#hello_people"
 
-  get "/tacos", to: "tacos#index" # office 200
-  get "/tacos/new", to: "tacos#new"
-  post "/tacos", to: "tacos#create"
+  # get "/tacos", to: "tacos#index" # office 200
+  # get "/tacos/new", to: "tacos#new"
+  # post "/tacos", to: "tacos#create"
+  # get "/tacos/:id", to: "tacos#show", as: "taco"
 
-  get "/tacos/:id", to: "tacos#show", as: "taco"
-
+  resources :tacos, only: [:new, :create, :index, :show]
+  
   get "/print_to_console", to: "tacos#print"
 
 end

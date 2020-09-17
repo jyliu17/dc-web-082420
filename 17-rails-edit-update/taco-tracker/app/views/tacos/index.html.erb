@@ -1,16 +1,15 @@
-<h1>All the Tacos</h1>
-
+<h1>All the <%= @taco_type %> Tacos</h1>
 <form action=<%=tacos_path%> method="GET">
     <div>
-        <input type="radio" name="vegetarian" value="true">
+        <input type="radio" name="vegetarian" value="true" <%= @taco_type == "Vegetarian" ? "checked" : nil %>>
         <label for="true">Only Vegetarian</label>
     </div>
     <div>
-        <input type="radio" name="vegetarian" value="false">
+        <input type="radio" name="vegetarian" value="false" <%= @taco_type == "Meat" ? "checked" : nil %>>
         <label for="false">Only Meat</label>
     </div>
     <div>
-        <input type="radio" name="vegetarian" value="all">
+        <input type="radio" name="vegetarian" value="all" <%= @taco_type.nil? ? "checked" : nil %>>
         <label for="all">All Tacos</label>
     </div>
     <div>
@@ -21,7 +20,7 @@
 <ul>
     <% @tacos.each do |taco| %>
         <li>
-            <%= link_to taco.display_name, taco_path(taco) %> - <%= taco.vegetarian? %>
+            <%= link_to taco.display_name, taco_path(taco.id) %> - <%= taco.display_veg %>
         </li>
     <% end %>
 </ul>

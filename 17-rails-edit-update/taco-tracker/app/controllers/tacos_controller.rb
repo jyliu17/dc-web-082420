@@ -1,11 +1,16 @@
 class TacosController < ApplicationController
 
   def index # list page (all tacos)
+    # if params[:monkey] == "banana"
+    #   return redirect_to "https://www.google.com/search?q=monkey"
+    # end
     if params[:vegetarian] == "true"
       # show only veg tacos 
+      @taco_type = "Vegetarian"
       @tacos = Taco.vegetarian
     elsif params[:vegetarian] == "false" 
       # show meat tacos 
+      @taco_type = "Meat"
       @tacos = Taco.meat
     else
       @tacos = Taco.all
@@ -33,9 +38,9 @@ class TacosController < ApplicationController
     price = params["taco"]["price"]
     veg = params["taco"]["vegetarian"]
     taco = Taco.create(name: name,
-                price: price,
-                vegetarian: veg)
-    redirect_to taco_path(taco)
+                       price: price,
+                       vegetarian: veg)
+    redirect_to taco_path(taco.id)
     
   end
 
