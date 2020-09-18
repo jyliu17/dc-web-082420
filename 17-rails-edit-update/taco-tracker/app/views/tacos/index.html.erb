@@ -1,22 +1,20 @@
 <h1>All the <%= @taco_type %> Tacos</h1>
-<form action=<%=tacos_path%> method="GET">
-    <div>
-        <input type="radio" name="vegetarian" value="true" <%= @taco_type == "Vegetarian" ? "checked" : nil %>>
-        <label for="true">Only Vegetarian</label>
-    </div>
-    <div>
-        <input type="radio" name="vegetarian" value="false" <%= @taco_type == "Meat" ? "checked" : nil %>>
-        <label for="false">Only Meat</label>
-    </div>
-    <div>
-        <input type="radio" name="vegetarian" value="all" <%= @taco_type.nil? ? "checked" : nil %>>
-        <label for="all">All Tacos</label>
-    </div>
-    <div>
-        <input type="submit">
-    </div>
-</form>
 
+
+<%= form_tag tacos_path, method: "GET" do %>
+    <%= label_tag "Only Vegetarian" %>
+    <%= radio_button_tag "vegetarian", 'true' %>
+    <%= label_tag "Only Meat" %>
+    <%= radio_button_tag "vegetarian", 'false' %>
+    <%= label_tag "All Tacos" %>
+    <%= radio_button_tag "vegetarian", 'all'%>
+    <%= submit_tag %>
+<% end %>
+
+
+<%= link_to "Create a new taco", new_taco_path %>
+
+<h3>Taco List</h3>
 <ul>
     <% @tacos.each do |taco| %>
         <li>

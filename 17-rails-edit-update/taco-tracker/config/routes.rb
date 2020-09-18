@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   # post "/tacos", to: "tacos#create"
   # get "/tacos/:id", to: "tacos#show", as: "taco"
 
-  resources :tacos, only: [:new, :create, :index, :show]
+  resources :tacos
   
   get "/print_to_console", to: "tacos#print"
+  get "/flip_veg/:id", to: "tacos#switch_veg", as: "flip_veg"
 
 end

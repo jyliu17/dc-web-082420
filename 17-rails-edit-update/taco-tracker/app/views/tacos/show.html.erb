@@ -3,4 +3,9 @@
 <div>Price: <%= @taco.display_price %></div>
 <div>Vegetarian? <%= @taco.display_veg %></div>
 
+<%= link_to "Edit this taco", edit_taco_path %>
+<%= link_to "Delete this taco", taco_path(@taco.id), 
+    method: "delete", 
+    data: {:confirm => "Are You Sure?"}%>
+<%= button_to "Switch Vegetarian", flip_veg_path, method: "get" %>
 <%= link_to("Back to Index Page", tacos_path) %>

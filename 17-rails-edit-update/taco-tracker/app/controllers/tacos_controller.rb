@@ -1,5 +1,8 @@
 class TacosController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
+  before_action :find_taco, only: [:show, :edit, :update, :switch_veg]
+  
   def index # list page (all tacos)
     # if params[:monkey] == "banana"
     #   return redirect_to "https://www.google.com/search?q=monkey"
@@ -19,8 +22,6 @@ class TacosController < ApplicationController
   end
 
   def show # detail page (single taco)
-    id = params[:id]
-    @taco = Taco.find(id)
   end
 
   def print
@@ -34,14 +35,43 @@ class TacosController < ApplicationController
   end
   
   def create
-    name = params["taco"]["name"]
-    price = params["taco"]["price"]
-    veg = params["taco"]["vegetarian"]
-    taco = Taco.create(name: name,
-                       price: price,
-                       vegetarian: veg)
+    # name = params["taco"]["name"]
+    # price = params["taco"]["price"]
+    # veg = params["taco"]["vegetarian"]
+    taco = Taco.create(taco_params)
     redirect_to taco_path(taco.id)
     
   end
+
+  def switch_veg
+    @taco.vegetarian = !@taco.vegetarian
+    @taco.save
+    redirect_to taco_path(@taco)
+  end
+
+  def edit
+    render :edit
+  end
+
+  def update
+    @taco.update(taco_params)
+    redirect_to taco_path(@taco)
+  end
+
+  def destroy
+    Taco.destroy(params[:id])
+    redirect_to tacos_path
+  end
+  
+  private
+
+  def taco_params
+    params.require(:taco).permit(:name, :price, :vegetarian)
+  end
+
+  def find_taco
+    @taco = Taco.find(params[:id])
+  end
+  
 
 end
