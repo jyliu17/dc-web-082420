@@ -1,0 +1,19 @@
+<h1>Edit the taco <%= @taco.name %></h1>
+
+<%= form_for @taco do |f| %>
+    <div>
+        <%= f.label :name, "Taco Name" %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :price %>
+        <%= f.number_field :price %>
+    </div>
+    <div>
+        <%= f.label :vegetarian, "Vegetarian?" %>
+        <%= f.select :vegetarian, [true, false] %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

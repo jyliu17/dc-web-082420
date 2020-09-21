@@ -1,0 +1,9 @@
+<%= form_for @taco do |f| %>
+    <%= f.label :name, "Taco Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.label :vegetarian, "Vegetarian?" %>
+    <%= f.select :vegetarian, [true, false] %>
+    <%= f.submit "Make A New Taco" %>
+<% end %>

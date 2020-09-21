@@ -1,0 +1,24 @@
+<h1>All the <%= @taco_type %> Tacos</h1>
+
+
+<%= form_tag tacos_path, method: "GET" do %>
+    <%= label_tag "Only Vegetarian" %>
+    <%= radio_button_tag "vegetarian", 'true' %>
+    <%= label_tag "Only Meat" %>
+    <%= radio_button_tag "vegetarian", 'false' %>
+    <%= label_tag "All Tacos" %>
+    <%= radio_button_tag "vegetarian", 'all'%>
+    <%= submit_tag %>
+<% end %>
+
+
+<%= link_to "Create a new taco", new_taco_path %>
+
+<h3>Taco List</h3>
+<ul>
+    <% @tacos.each do |taco| %>
+        <li>
+            <%= link_to taco.display_name, taco_path(taco.id) %> - <%= taco.display_veg %>
+        </li>
+    <% end %>
+</ul>
