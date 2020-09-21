@@ -1,6 +1,6 @@
 class Taco < ApplicationRecord
 
-    belongs_to :restaurant
+    belongs_to :restaurant, optional: true
     
     def display_name
         return self.name.titlecase

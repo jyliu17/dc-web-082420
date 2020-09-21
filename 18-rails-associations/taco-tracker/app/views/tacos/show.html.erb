@@ -1,5 +1,9 @@
 <h1><%= @taco.display_name %></h1>
 
+<% if @taco.restaurant %>
+    <div>Made by <%= link_to @taco.restaurant.name, restaurant_path(@taco.restaurant) %></div>
+<% end %>
+
 <div>Price: <%= @taco.display_price %></div>
 <div>Vegetarian? <%= @taco.display_veg %></div>
 

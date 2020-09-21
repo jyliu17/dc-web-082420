@@ -66,7 +66,7 @@ class TacosController < ApplicationController
   private
 
   def taco_params
-    params.require(:taco).permit(:name, :price, :vegetarian)
+    params.require(:taco).permit(:name, :price, :vegetarian, :restaurant_id)
   end
 
   def find_taco

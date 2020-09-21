@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # get "/tacos/:id", to: "tacos#show", as: "taco"
 
   resources :tacos
+  resources :restaurants, only: [:index, :show]
   
   get "/print_to_console", to: "tacos#print"
   get "/flip_veg/:id", to: "tacos#switch_veg", as: "flip_veg"

@@ -11,6 +11,7 @@
 - Nested Forms (bonus)
 - Can I rename my migrations? Yes, carefully
 - strong params - what?
+
 - ActiveRecord to sort
 
 - What do we need to know for Code Challenge?

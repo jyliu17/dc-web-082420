@@ -5,5 +5,7 @@
     <%= f.number_field :price %>
     <%= f.label :vegetarian, "Vegetarian?" %>
     <%= f.select :vegetarian, [true, false] %>
+
+    <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name) %>
     <%= f.submit "Make A New Taco" %>
 <% end %>
