@@ -1,0 +1,12 @@
+<h1>Missions#new</h1>
+<p>Find me in app/views/missions/new.html.erb</p>
+
+<%= form_for @mission do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :scientist %>
+    <%= collection_select :mission, :scientist_id, Scientist.abc_order, :id, :name %>
+    <%= f.label :planet %>
+
+    <%= f.submit %>
+<% end %>

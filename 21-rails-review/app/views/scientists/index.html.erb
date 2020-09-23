@@ -1,0 +1,6 @@
+<h1>Scientists#index</h1>
+<p>Find me in app/views/scientists/index.html.erb</p>
+<%= @yay %>
+<% @scientists.each do |sci| %>
+    <div><%= link_to sci.name, scientist_path(sci) %></div>
+<% end %>
