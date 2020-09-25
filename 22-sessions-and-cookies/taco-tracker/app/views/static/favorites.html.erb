@@ -1,0 +1,9 @@
+<h3>My favorite tacos are</h3>
+
+<ul>
+    <% @favorites.each do |favorite| %>
+        <li>    
+            Taco name: <%= favorite %>
+        </li>
+    <% end %>
+</ul>
