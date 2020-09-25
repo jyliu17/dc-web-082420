@@ -1,0 +1,7 @@
+<%= flash.now[:no_user]%>
+
+<%= form_tag login_path do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= submit_tag "Login" %>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get "/hello_world", to: "static#hello_world"
@@ -18,5 +19,7 @@ Rails.application.routes.draw do
   
   get "/print_to_console", to: "tacos#print"
   get "/flip_veg/:id", to: "tacos#switch_veg", as: "flip_veg"
-
+  get "/login", to: "users#login"
+  post "/login", to: "users#process_login"
+  get "/logout", to: "users#logout"
 end

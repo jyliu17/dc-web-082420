@@ -20,12 +20,15 @@ class TacosController < ApplicationController
     else
       @tacos = Taco.all
     end
+    cookies[:times_visited] ||= 0
+    cookies[:times_visited] = cookies[:times_visited].to_i + 1
     render(:index)
   end
 
   def show # detail page (single taco)
     cookies["favorite_taco"] = "Bacon Taco"
     cookies["last_visited"] = @taco.name
+    session["secret_favorite"] = "Banana Taco"
   end
 
   def print
