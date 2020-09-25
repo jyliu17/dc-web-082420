@@ -9,11 +9,13 @@ class TacosController < ApplicationController
     # end
     if params[:vegetarian] == "true"
       # show only veg tacos 
+      cookies[:vegetarian] = true
       @taco_type = "Vegetarian"
       @tacos = Taco.vegetarian
-    elsif params[:vegetarian] == "false" 
+    elsif params[:vegetarian] == "false"
       # show meat tacos 
       @taco_type = "Meat"
+      cookies[:vegetarian] = false
       @tacos = Taco.meat
     else
       @tacos = Taco.all
@@ -22,6 +24,8 @@ class TacosController < ApplicationController
   end
 
   def show # detail page (single taco)
+    cookies["favorite_taco"] = "Bacon Taco"
+    cookies["last_visited"] = @taco.name
   end
 
   def print

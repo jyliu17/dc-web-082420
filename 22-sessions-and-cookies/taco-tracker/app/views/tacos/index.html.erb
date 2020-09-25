@@ -1,6 +1,7 @@
 <h1>All the <%= @taco_type %> Tacos</h1>
 
-
+<div>My favorite taco is <%= cookies["favorite_taco"] %></div>
+<div>The last taco I visited was <%= cookies["last_visited"] %></div>
 <%= form_tag tacos_path, method: "GET" do %>
     <%= label_tag "Only Vegetarian" %>
     <%= radio_button_tag "vegetarian", 'true' %>
