@@ -1,0 +1,13 @@
+<%= render partial: "shared/error_list", locals: {new_object: @taco} %>
+
+<%= form_for @taco do |f| %>
+    <%= f.label :name, "Taco Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.label :vegetarian, "Vegetarian?" %>
+    <%= f.select :vegetarian, [true, false] %>
+
+    <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name) %>
+    <%= f.submit button_text %>
+<% end %>
