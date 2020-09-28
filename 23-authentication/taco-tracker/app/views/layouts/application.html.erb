@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Git Lit TacoTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">
+      <% if session[:user_id] %>
+        <div>Welcome <%= User.find(session[:user_id]).username %></div>
+        <div><%= link_to "Logout", logout_path %></div>
+      <% else %>
+        <%= link_to "Login", login_path %>
+      <% end %>
+      <%= link_to "Index Page", tacos_path %>
+      <%= link_to "Create a new taco", new_taco_path %>
+    </div>
+    <%= yield %>
+  </body>
+</html>
