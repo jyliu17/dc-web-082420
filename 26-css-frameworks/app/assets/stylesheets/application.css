@@ -1,0 +1,81 @@
+.heading {
+    color: white; 
+    font-weight: bold;  
+    background-image: url(leaf-background.png);
+    background-size: cover;
+}
+
+.primary-header {
+    font-size: 75px;
+    text-align: center;
+    padding: 50px;
+}
+
+.secondary-header {
+    font-size: 25px;
+    padding: 25px;
+}
+
+/* Wrappers */
+
+.intro {
+    background-color: linen;
+    border: 3px solid black;
+}
+
+.wrapper {
+    margin: 50px 100px;
+    padding: 20px;
+}
+
+.sighting-form {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px 25vw;
+}
+
+/* Gallery pages */
+
+.gallery {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.gallery-image {
+    width: 200px;
+    height: 200px;
+    box-shadow: 5px 5px 5px lightgray;
+}
+
+.gallery-image:hover {
+    box-shadow: 5px 5px 5px gray;
+}
+
+/* Show pages */
+
+.tree-image {
+    float: left;
+    max-height: 300px;
+    margin: 0px 50px 20px 0px;
+}
+
+.tree-page-link {
+    clear: both;
+}
+
+.sci-name {
+    font-style: italic;
+}
+
+/* This is to override some of the semantic menu styling */
+#navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+#home-button {
+    font-family: serif;
+}

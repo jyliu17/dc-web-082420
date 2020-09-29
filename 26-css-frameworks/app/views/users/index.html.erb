@@ -1,0 +1,9 @@
+<div class="heading secondary-header">Tree Tracker Users</div>
+
+<div class="gallery">
+<% @users.each do |u| %>
+    <%= link_to user_path(u) do %>
+        <%= image_tag u.image, class: "gallery-image"%>
+    <% end %>
+<% end %>
+</div>
