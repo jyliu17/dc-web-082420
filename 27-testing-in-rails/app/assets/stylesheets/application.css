@@ -1,0 +1,97 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+ .heading {
+    color: white; 
+    font-weight: bold;  
+    background-color: darkcyan;
+    box-shadow: 5px 5px 5px lightgray;
+}
+
+.primary-header {
+    font-size: 75px;
+    /* text-align: center; */
+    padding: 50px 50px 20px 50px;
+}
+
+.secondary-header {
+    font-size: 25px;
+    padding: 25px;
+}
+
+ .gallery {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.gallery-image {
+    width: 200px;
+    height: 125px;
+    box-shadow: 5px 5px 5px lightgray;
+}
+
+.gallery-image:hover {
+    box-shadow: 5px 5px 5px gray;
+}
+
+.show-image {
+    width: 400px;
+    height: 250px;
+}
+
+.best-image {
+    width: 600px;
+    height: 300px;
+    margin: 30px 0px;
+}
+
+.main-wrapper {
+    background-color: #e0e1e2;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.wrapper {
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+#region-btn {
+    padding-top: 50px;
+}
+
+#main-menu {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#main-menu-item {
+    color: white;
+}
+
+.flag-form {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px 25vw;
+}
+
+.flag-info {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.username {
+    padding-left: 4px;
+    color: darkcyan;
+    font-size: 18px;
+}

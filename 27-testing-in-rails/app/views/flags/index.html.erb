@@ -1,0 +1,19 @@
+<div class="heading primary-header">
+    FLAGS FLAGS FLAGS
+    <div class="ui secondary menu", id="main-menu">
+        <%= link_to "SEE THE BEST ONE", best_flag_path, class: "item", id: "main-menu-item" %>
+        <%= link_to "ADD A NEW FLAG", new_flag_path, class: "item", id: "main-menu-item" %>
+        <% if logged_in? %>
+            <%= link_to "LOG OUT", logout_path, method: :delete, class: "item", id: "main-menu-item" %>
+        <% else %>
+            <%= link_to "LOG IN", login_path, class: "item", id: "main-menu-item" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="gallery">
+<% @flags.each do |flag| %>
+    <%= link_to flag.region, flag_path(flag), class: "ui button", id: "region-btn" %>
+    <%= image_tag flag.image_url, class: "gallery-image" %>
+<% end %>
+</div>

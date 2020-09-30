@@ -1,0 +1,14 @@
+<div class="heading secondary-header">Log in</div>
+<div class="flag-form">
+<%= form_tag login_path, class: "ui form" do  %>
+    <div class="field">
+        <%= label_tag :username %>
+        <%= text_field_tag :username %>
+    </div>
+    <div class="field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+    </div>
+    <%= submit_tag "Log In", class: "ui button" %>
+<% end %>
+</div>

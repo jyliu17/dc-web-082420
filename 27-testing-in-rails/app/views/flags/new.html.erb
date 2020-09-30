@@ -1,0 +1,41 @@
+<div class="heading secondary-header">Add a new flag</div>
+
+<div class="flag-form">
+    <%= form_for @flag, html: {class: "ui form"} do |f| %>
+        <h4 class="ui dividing header">You are logged in as <span class="username"><%= current_user.username %></span></h4>
+        <div class="field">
+            <%= f.label :region %>
+            <%= f.text_field :region %>
+        </div>
+        <div class="field">    
+            <label>Interesting fact</label>
+            <%= f.text_field :info %><br>
+        </div>
+        <div class="field">
+            <label>Flag image (url)</label>
+            <%= f.text_field :image_url %>
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <%= f.label :flag_type %>
+                <%= f.select :flag_type, @flag_types %>
+            </div>
+            <div class="field">  
+                <%= f.label :rating %>
+                <%= f.select :rating, @ratings, prompt: "Select" %>
+            </div>
+        </div>
+        <div class="field">
+            <label>Is this a current flag?</label>
+            <div class="radio-field">
+                <div class="inline fields">
+                    <%= f.radio_button :current, true, class: "ui radio checkbox", checked: true %> 
+                    <%= label :current?, 'Yes' %>
+                    <%= f.radio_button :current, false, class: "ui radio checkbox" %>
+                    <%= label :current?, 'No' %>
+                </div>
+            </div>
+        </div>
+        <%= f.submit "Add flag", class: "ui button"%>
+    <% end %>
+</div>
