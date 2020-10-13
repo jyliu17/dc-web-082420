@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  common_name: 
+  binomial_name: MyString
+  image: MyString
+
+two:
+  common_name: 
+  binomial_name: MyString
+  image: MyString
