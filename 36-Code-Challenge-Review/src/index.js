@@ -30,8 +30,9 @@ function fetchOneMovie(id) {
 function listMovies(movies) {
     movies.forEach(movie => {
         let filmItem = document.createElement('div')
-        filmItem.className = "film item"
+        filmItem.className = (movie.capacity == movie.tickets_sold ? "sold-out film item" : "film item")
         filmItem.textContent = movie.title
+        filmItem.id = `movie-${movie.id}`
         filmItem.addEventListener('click', () => fetchOneMovie(movie.id))
         filmsDiv().appendChild(filmItem)
     })
@@ -74,6 +75,12 @@ function buyTicket() {
             body: JSON.stringify({tickets_sold: ticketsSold + 1})
         }).then(r => r.json())
         .then(updatedMovie => {
+            
+            if (updatedMovie.capacity == updatedMovie.tickets_sold) {
+                let filmItem = document.querySelector(`#movie-${updatedMovie.id}`)
+                filmItem.classList.add('sold-out')
+            }
+
             displayMovie(updatedMovie)
         })
 
