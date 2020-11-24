@@ -1,0 +1,23 @@
+  #words {
+  display: block;
+}
+
+.word-card {
+  display: inline-block;
+  margin: 20px;
+  padding: 5px;
+  border: 5px solid black;
+}
+
+.word-image {
+  height: 225px;
+  width: 225px;
+}
+
+.input-field {
+  margin: 20px;
+  background-color: lightgray;
+  padding: 1px 0px 20px 20px;
+  border-radius: 10px;
+  width: 300px;
+}

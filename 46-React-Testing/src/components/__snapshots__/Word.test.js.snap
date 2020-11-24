@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word component renders a word correctly 1`] = `
+<div
+  className="word-card"
+>
+  <h2>
+    fuglen
+  </h2>
+  <img
+    className="word-image"
+    src={null}
+  />
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</div>
+`;
